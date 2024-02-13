@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Happy Valentine's Day!</title>
+<style>
+    body {
+        font-family: Arial, sans-serif;
+        margin: 0;
+        padding: 0;
+        background-color: #f7eaf8;
+        overflow: hidden;
+    }
+    .container {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+    }
+    .heart-button {
+        background-color: transparent;
+        border: none;
+        cursor: pointer;
+        outline: none;
+        animation: pulse 1.5s infinite alternate;
+    }
+    .heart {
+        font-size: 8rem;
+        color: #d21404;
+    }
+    .message {
+        text-align: center;
+        display: none;
+        animation: slideIn 1s forwards;
+    }
+    p {
+        font-size: 1.5rem;
+        color: #5f3473;
+        animation: float 2s infinite alternate;
+    }
+    @keyframes pulse {
+        from {
+            transform: scale(1);
+        }
+        to {
+            transform: scale(1.1);
+        }
+    }
+    @keyframes float {
+        from {
+            transform: translateY(0);
+        }
+        to {
+            transform: translateY(-20px);
+        }
+    }
+    @keyframes slideIn {
+        from {
+            opacity: 0;
+            transform: translateY(-50px);
+        }
+        to {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    }
+    .heart-container {
+        margin-bottom: 20px;
+    }
+</style>
+</head>
+<body>
+<div class="container">
+    <div class="heart-container">
+        <button class="heart-button" onclick="toggleMessage()">
+            <span class="heart">&#10084;</span>
+        </button>
+    </div>
+    <div class="message" id="message">
+        <h1>Happy Valentine's Day!</h1>
+        <p>This was so random, but nice playing with you in Val. I hope we can play more. 
+        I made this for you out of curiosity because it's a trend that i saw on tiktok related to my course. So yeah! Again, Happy Valentine's Day!:"></p>
+    </div>
+</div>
+
+<script>
+    function toggleMessage() {
+        var message = document.getElementById("message");
+        if (message.style.display === "none" || message.style.display === "") {
+            message.style.display = "block";
+        } else {
+            message.style.display = "none";
+        }
+    }
+</script>
+</body>
+</html>
